@@ -1,0 +1,78 @@
+.loading {
+    padding: 100px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #999;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111;
+}
+
+.boardTable {
+    width: 100%;
+    /* 원래 table 태그는, 테이블에 외곽선과 셀의 외곽선이 따로 있는데
+    그걸 하나로 합쳐서 표현할 수 있도록 하는 CSS 속성
+     */
+    border-collapse: collapse;
+    border-top: 2px solid #333;
+}
+
+.boardTable th {
+    background-color: #f8f9fa;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.boardTable td {
+    padding: 16px 14px;
+    border-bottom: 1px solid #eee;
+}
+
+
+.tableRow {
+    transition: all 0.2s;
+}
+
+.tableRow:hover {
+    background-color: #f1f7ff;
+}
+
+
+.idCell {
+    width: 80px;
+    text-align: center;
+    color: #888;
+}
+
+
+.titleCell {
+    text-align: left;
+}
+
+.link {
+    text-decoration: none;
+    color: #333;
+    width: 100%;
+    display: block;
+
+}
+
+.link:hover {
+    color: #0077ff;
+}
