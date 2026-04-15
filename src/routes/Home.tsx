@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import { Link } from "react-router";
+import type { PostType } from "./Detail.tsx";
 
 function Home() {
     // 초기값이 이미 true로 들어가기 때문에, (타입추론을해서) 타입스크립트 엔진이 loading에 대해 boolean으로 고정시킴
@@ -14,14 +15,12 @@ function Home() {
 
     // 앞으로 어떠한 요소가 들어가는 배열이 될지를 지정해줘야 됨
     // 객체가 요소로서 존재할 수 있는 배열이 될거야라고 써주면됨
-    const [posts, setPosts] = useState<
-        { userId: string; id: number; title: string; body: string }[]
-    >([]);
+    const [posts, setPosts] = useState<PostType[]>([]);
 
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/posts")
             .then(res => res.json())
-            .then((json: { userId: string; id: number; title: string; body: string }[]) => {
+            .then((json: PostType[]) => {
                 setPosts(json);
                 setLoading(false);
             })
@@ -46,15 +45,17 @@ function Home() {
                     </tr>
                 </thead>
                 <tbody>
-                {posts.map((value, index) => (
-                    <tr key={index} className={styles.tableRow}>
-                        <td className={styles.idCell}>{value.id}</td>
-                        <td className={styles.titleCell}>
-                            <Link to={`/${value.id}`} className={styles.link}>{value.title}</Link>
-                        </td>
-                        <td style={{ textAlign: "center", color: "#666" }}>{value.userId}</td>
-                    </tr>
-                ))}
+                    {posts.map((value, index) => (
+                        <tr key={index} className={styles.tableRow}>
+                            <td className={styles.idCell}>{value.id}</td>
+                            <td className={styles.titleCell}>
+                                <Link to={`/${value.id}`} className={styles.link}>
+                                    {value.title}
+                                </Link>
+                            </td>
+                            <td style={{ textAlign: "center", color: "#666" }}>{value.userId}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

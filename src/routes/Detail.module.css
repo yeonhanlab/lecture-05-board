@@ -1,0 +1,55 @@
+.loading {
+    text-align: center;
+    padding: 100px;
+    font-size: 1.1rem;
+    color: #999;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+
+}
+
+.backLink {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 32px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #f1f3f5;
+    border: 1px solid #666;
+}
+
+.backLink:hover {
+    background-color: #e9ecef;
+    color: #0077ff;
+}
+
+
+.article {
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 24px;
+}
+
+.meta {
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.body {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
